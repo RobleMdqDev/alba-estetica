@@ -1,0 +1,236 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+/* Cómo trabajamos: banda clay */
+.clay {
+  background: var(--clay);
+  color: var(--canvas);
+}
+.process {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.processPhoto {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 48px;
+}
+.steps li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.stepNum {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--gold-soft);
+}
+.steps h3 {
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.steps p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 42ch;
+}
+
+/* Equipo */
+.team {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--hairline);
+}
+.team h3 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 20px 0 4px;
+}
+.team p {
+  font-size: 14px;
+  color: var(--ash);
+}
+
+/* Testimonios: banda negra con recortes crema */
+.ink {
+  background: var(--ink-band);
+  color: #fff;
+}
+.rating {
+  margin-top: 16px;
+  color: var(--mute);
+  font-size: 16px;
+}
+.quotes {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.quote {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--canvas);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 32px 24px 24px;
+}
+.quote blockquote {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+.quote figcaption {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--ash);
+}
+.stars {
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+/* Preguntas */
+.faqWrap {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+.faq details {
+  border-top: 1px solid var(--hairline);
+}
+.faq details:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  font-size: 20px;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--stone);
+  display: grid;
+  place-items: center;
+  color: var(--stone);
+  transition: transform 0.2s ease;
+}
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq details p {
+  margin-bottom: 24px;
+  max-width: 60ch;
+  color: var(--stone);
+  font-size: 16px;
+}
+
+/* Ubicación: banda rosa empolvado */
+.olive {
+  background: var(--olive);
+  color: var(--ink);
+}
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+.address {
+  margin-top: 16px;
+  font-size: 18px;
+  color: var(--stone);
+}
+.hours {
+  margin: 40px 0;
+}
+.hours div {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-top: 1px solid rgba(15, 27, 45, 0.15);
+  font-size: 16px;
+}
+.map {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+.map svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1023px) {
+  .quotes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 860px) {
+  .process,
+  .location,
+  .faqWrap {
+    grid-template-columns: 1fr;
+  }
+  .processPhoto {
+    aspect-ratio: 4 / 3;
+  }
+}
+@media (max-width: 767px) {
+  .team,
+  .quotes {
+    grid-template-columns: 1fr;
+  }
+  .faq summary {
+    font-size: 18px;
+  }
+}
